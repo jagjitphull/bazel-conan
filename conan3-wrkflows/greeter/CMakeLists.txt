@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.15)
+project(greeter CXX)
+find_package(hello REQUIRED CONFIG)
+add_executable(greeter app.cpp)
+target_link_libraries(greeter PRIVATE hello::hello)
