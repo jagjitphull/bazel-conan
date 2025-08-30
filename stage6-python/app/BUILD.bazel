@@ -1,0 +1,15 @@
+# //app/BUILD.bazel
+
+load("//tools:macros.bzl", "create_python_service")
+
+create_python_service(
+    name = "hello_service",
+    template = "service.template",
+    substitutions = {
+        "{{GREETING}}": "Hello, Bazel!",
+    },
+    srcs = ["app.py"],
+    deps = [
+        # Any Python dependencies for app.py
+    ]
+)

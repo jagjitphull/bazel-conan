@@ -1,0 +1,8 @@
+# Use the local HTTP remote cache
+build --remote_cache=http://localhost:8080
+
+# Upload local results so others (or you later) can fetch them
+build --remote_upload_local_results=true
+
+# (Nice to have)
+build --remote_timeout=60s

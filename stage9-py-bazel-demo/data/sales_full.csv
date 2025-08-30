@@ -1,0 +1,7 @@
+date,region,sku,qty,price
+2025-01-01,West,ABC,2,10.00
+2025-01-01,South,XYZ,5,7.50
+2025-01-02,East,DEF,1,20.00
+2025-01-02,North,LMN,4,8.25
+2025-01-03,West,ABC,3,10.00
+2025-01-03,East,DEF,2,20.00

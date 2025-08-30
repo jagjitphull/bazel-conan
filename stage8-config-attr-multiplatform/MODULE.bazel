@@ -1,0 +1,5 @@
+# MODULE.bazel
+
+module(name = "my_configurable_lib")
+
+bazel_dep(name = "rules_cc", version = "0.0.9") # Use a recent stable version

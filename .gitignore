@@ -1,0 +1,33 @@
+# C/C++ build outputs
+build/
+cmake-build-*/
+Release/
+Debug/
+out/
+*.o
+*.obj
+*.pdb
+*.ilk
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.exe
+
+# CMake/Conan
+CMakeFiles/
+CMakeCache.txt
+conan.lock
+*.cmake
+compile_commands.json
+
+# IDEs
+.vscode/
+.idea/
+.vs/
+
+# OS noise
+.DS_Store
+Thumbs.db
+

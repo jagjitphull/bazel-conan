@@ -1,0 +1,4 @@
+module(name = "py_bazel_demo", version = "0.1")
+
+# For a neat boolean flag (no external deps needed beyond this)
+bazel_dep(name = "bazel_skylib", version = "1.7.1")

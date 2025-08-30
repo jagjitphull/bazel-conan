@@ -1,0 +1,4 @@
+# MODULE.bazel
+module(name = "my_python_example")
+
+bazel_dep(name = "rules_python", version = "0.40.0") # Use a recent stable version

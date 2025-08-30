@@ -1,0 +1,29 @@
+# BUILD.bazel
+
+# Corrected load statement for Bzlmod
+load("@rules_cc//cc:defs.bzl", "cc_library") 
+
+cc_library(
+    name = "my_lib",
+    srcs = select({
+        "//:x86_config": ["x86_source.cc"],
+        "//:arm_config": ["arm_source.cc"],
+        "//conditions:default": ["generic_source.cc"],
+    }),
+    hdrs = ["my_lib.h"],
+    visibility = ["//visibility:public"],
+)
+
+config_setting(
+    name = "x86_config",
+    values = {
+        "cpu": "x86_64",
+    },
+)
+
+config_setting(
+    name = "arm_config",
+    values = {
+        "cpu": "arm64",
+    },
+)
