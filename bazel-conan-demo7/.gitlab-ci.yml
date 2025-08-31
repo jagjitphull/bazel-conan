@@ -1,0 +1,33 @@
+stages: [build, test]
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+    - .conan2
+    - .bazel-cache
+
+build:
+  stage: build
+  image: ubuntu:22.04
+  script:
+    - apt-get update && apt-get install -y curl python3-pip git build-essential
+    - pip3 install --upgrade pip conan
+    - curl -L https://github.com/bazelbuild/bazelisk/releases/latest/download/bazelisk-linux-amd64 -o bazel && chmod +x bazel && mv bazel /usr/local/bin/bazel
+    - ./tools/conan/install.sh
+    - bazel build //apps/hello:hello --output_base=.bazel-cache
+  artifacts:
+    paths:
+      - bazel-bin/apps/hello/hello
+
+test:
+  stage: test
+  image: ubuntu:22.04
+  script:
+    - apt-get update && apt-get install -y curl python3-pip git build-essential
+    - pip3 install --upgrade pip conan
+    - curl -L https://github.com/bazelbuild/bazelisk/releases/latest/download/bazelisk-linux-amd64 -o bazel && chmod +x bazel && mv bazel /usr/local/bin/bazel
+    - ./tools/conan/install.sh
+    - bazel test //... --test_output=errors --output_base=.bazel-cache

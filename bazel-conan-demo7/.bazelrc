@@ -1,0 +1,7 @@
+build --enable_bzlmod
+# Make sure our Conan output is visible to actions
+build --action_env=CONAN_SYSROOT=third_party/conan
+# Speed & warnings (tweak as you like)
+build --cxxopt=-std=c++17
+build --copt=-O2
+build --host_cxxopt=-std=c++17

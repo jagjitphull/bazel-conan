@@ -1,0 +1,6 @@
+module(
+    name = "bazel_conan_demo",
+    version = "0.1.0",
+)
+# For pure C/C++ we don’t strictly need external deps; using built-in rules_cc in Bazel 8
+# If you later want extras, declare bazel_dep(...) here.
