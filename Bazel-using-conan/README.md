@@ -1,1 +1,0 @@
-https://docs.conan.io/2/examples/tools/google/bazeltoolchain/build_simple_bazel_7x_project.html
