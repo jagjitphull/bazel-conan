@@ -1,0 +1,9 @@
+cc_binary(
+    name = "hello",
+    srcs = ["main.cpp"],
+    deps = [
+        "@fmt//:fmt",
+        "@nlohmann_json//:nlohmann_json",
+    ],
+)
+

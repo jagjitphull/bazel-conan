@@ -1,0 +1,17 @@
+# Components precompiled libs
+# Root package precompiled libs
+
+# Components libraries declaration
+# Package library declaration
+cc_library(
+    name = "nlohmann_json",
+    hdrs = glob([
+        "include/**",
+    ]),
+    includes = [
+        "include",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+# Filegroup library declaration

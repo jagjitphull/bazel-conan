@@ -1,0 +1,14 @@
+# Minimal module; Bzlmod replaces WORKSPACE in Bazel 8.
+module(
+    name = "bazel_conan_ci_optb",
+    version = "1.0",
+)
+
+# Load the Conan-generated module extension (created after `conan install`).
+# NOTE: The label path `//conan:conan_deps_module_extension.bzl` becomes valid once
+# Conan generates the `conan/` folder.
+load_conan_dependencies = use_extension("//conan:conan_deps_module_extension.bzl", "conan_extension")
+
+# Ask Bazel to create repositories for your Conan deps.
+# Names are the package names by default.
+use_repo(load_conan_dependencies, "fmt", "nlohmann_json")
