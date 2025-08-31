@@ -7,5 +7,5 @@ def load_conan_dependencies():
     native.new_local_repository(
         name="fmt",
         path="/home/ilg/.conan2/p/fmt0c92ad97b75de/p",
-        build_file="/home/ilg/Nextcloud/bazel_conan_code_eg/examples/cpp-tutorial/Bazel-using-conan/conan/fmt/BUILD.bazel",
+        build_file="/home/ilg/Nextcloud/bazel_conan_code_eg/examples/cpp-tutorial/Bazel-using-conan6/conan/fmt/BUILD.bazel",
     )

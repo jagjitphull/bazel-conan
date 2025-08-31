@@ -1,7 +1,0 @@
-[settings]
-os=Linux
-arch=x86_64
-compiler=gcc
-compiler.version=12
-compiler.cppstd=17
-build_type=Release

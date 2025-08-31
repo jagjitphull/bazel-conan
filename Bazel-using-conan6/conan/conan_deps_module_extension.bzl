@@ -6,7 +6,7 @@ def _load_dependencies_impl(mctx):
     conan_dependency_repo(
         name = "fmt",
         package_path = "/home/ilg/.conan2/p/fmt0c92ad97b75de/p",
-        build_file_path = "/home/ilg/Nextcloud/bazel_conan_code_eg/examples/cpp-tutorial/Bazel-using-conan/conan/fmt/BUILD.bazel",
+        build_file_path = "/home/ilg/Nextcloud/bazel_conan_code_eg/examples/cpp-tutorial/Bazel-using-conan6/conan/fmt/BUILD.bazel",
     )
 
     return mctx.extension_metadata(

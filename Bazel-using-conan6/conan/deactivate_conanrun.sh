@@ -1,1 +1,1 @@
-. "/home/ilg/Nextcloud/bazel_conan_code_eg/examples/cpp-tutorial/Bazel-using-conan/conan/deactivate_conanrunenv-release-x86_64.sh"
+. "/home/ilg/Nextcloud/bazel_conan_code_eg/examples/cpp-tutorial/Bazel-using-conan6/conan/deactivate_conanrunenv-release-x86_64.sh"
