@@ -1,0 +1,5 @@
+#MODULE.bazel
+
+module(name = "bazel_rules_learning", version="0.1.0")
+
+#no external deps needed for this learning

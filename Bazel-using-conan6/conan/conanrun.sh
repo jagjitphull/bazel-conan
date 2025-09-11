@@ -1,1 +1,0 @@
-. "/home/ilg/Nextcloud/bazel_conan_code_eg/examples/cpp-tutorial/Bazel-using-conan/conan/conanrunenv-release-x86_64.sh"

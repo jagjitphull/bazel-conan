@@ -1,1 +1,1 @@
-. "/home/ilg/Nextcloud/bazel_conan_code_eg/examples/cpp-tutorial/conan3-wrkflows/greeter/deactivate_conanbuildenv-release-x86_64.sh"
+. "/home/ilg/bazel-conan/conan3-wrkflows/greeter/deactivate_conanbuildenv-release-x86_64.sh"

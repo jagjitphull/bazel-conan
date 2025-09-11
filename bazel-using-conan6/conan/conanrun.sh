@@ -1,0 +1,1 @@
+. "/home/ilg/bazel-conan/Bazel-using-conan6/conan/conanrunenv-release-x86_64.sh"

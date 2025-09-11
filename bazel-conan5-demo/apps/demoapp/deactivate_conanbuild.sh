@@ -1,0 +1,1 @@
+. "/home/ilg/bazel-conan/bazel-conan5-demo/apps/demoapp/deactivate_conanbuildenv-release-x86_64.sh"

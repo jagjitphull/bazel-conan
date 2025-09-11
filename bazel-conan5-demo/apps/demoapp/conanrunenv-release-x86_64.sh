@@ -1,4 +1,4 @@
-script_folder="/home/ilg/Nextcloud/bazel_conan_code_eg/examples/cpp-tutorial/Bazel-using-conan/conan"
+script_folder="/home/ilg/bazel-conan/bazel-conan5-demo/apps/demoapp"
 echo "echo Restoring environment" > "$script_folder/deactivate_conanrunenv-release-x86_64.sh"
 for v in 
 do

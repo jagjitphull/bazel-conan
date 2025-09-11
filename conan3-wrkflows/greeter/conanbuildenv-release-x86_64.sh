@@ -1,4 +1,4 @@
-script_folder="/home/ilg/Nextcloud/bazel_conan_code_eg/examples/cpp-tutorial/conan3-wrkflows/greeter"
+script_folder="/home/ilg/bazel-conan/conan3-wrkflows/greeter"
 echo "echo Restoring environment" > "$script_folder/deactivate_conanbuildenv-release-x86_64.sh"
 for v in 
 do

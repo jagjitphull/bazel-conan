@@ -6,12 +6,12 @@ def _load_dependencies_impl(mctx):
     conan_dependency_repo(
         name = "fmt",
         package_path = "/home/ilg/.conan2/p/fmtce0345343b4fd/p",
-        build_file_path = "/home/ilg/Nextcloud/bazel_conan_code_eg/examples/cpp-tutorial/bazel-conan-CI-demo8/conan/fmt/BUILD.bazel",
+        build_file_path = "/home/ilg/bazel-conan/bazel-conan-CI-demo8/conan/fmt/BUILD.bazel",
     )
     conan_dependency_repo(
         name = "nlohmann_json",
         package_path = "/home/ilg/.conan2/p/nlohm0567ffc90cfc1/p",
-        build_file_path = "/home/ilg/Nextcloud/bazel_conan_code_eg/examples/cpp-tutorial/bazel-conan-CI-demo8/conan/nlohmann_json/BUILD.bazel",
+        build_file_path = "/home/ilg/bazel-conan/bazel-conan-CI-demo8/conan/nlohmann_json/BUILD.bazel",
     )
 
     return mctx.extension_metadata(

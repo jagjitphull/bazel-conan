@@ -1,0 +1,24 @@
+###############################################################################
+# Bazel now uses Bzlmod by default to manage external dependencies.
+# Please consider migrating your external dependencies from WORKSPACE to MODULE.bazel.
+#
+# For more details, please check https://github.com/bazelbuild/bazel/issues/18958
+###############################################################################
+load_conan_dependencies = use_extension("//conan:conan_deps_module_extension.bzl", "conan_extension")
+use_repo(load_conan_dependencies, "fmt")
+#module(name = "bazel_using_conan6")  # any name is fine
+
+# (Optional) If you use rules_cc or others, declare them here.
+# bazel_dep(name = "rules_cc", version = "0.0.10")
+
+# 1) Load the Conan extension
+#use_extension("//conan:conan_deps_module_extension.bzl", "conan_deps")
+
+# 2) Point it at the file Conan generated
+#conan_deps.from_file("//conan:dependencies.bzl")
+
+# 3) Expose the repos you need as NORMAL Bazel repos
+#    Look inside conan/dependencies.bzl for the available names.
+#use_repo(conan_deps, "fmt")           # <-- exposes @fmt
+#use_repo(conan_deps, "conan_tools")   # <-- exposes @conan_tools (toolchain/env)
+

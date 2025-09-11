@@ -1,0 +1,88 @@
+**Unix-Makefiles** flow that uses the **exact toolchain path** Conan generates under `build/Release/generators/conan_toolchain.cmake` (no Ninja).
+
+# Build steps (Release)
+
+1. Prereqs (compiler, make, Conan, CMake already on your PATH)
+
+```bash
+sudo apt update
+sudo apt install -y build-essential python3-pip
+pip install "conan>=2,<3"
+conan --version
+cmake  --version
+```
+
+2. Detect a Conan profile (once)
+
+```bash
+conan profile detect --force
+```
+
+3. Ensure `conanfile.txt` has the generators/layout
+
+```
+[generators]
+CMakeToolchain
+CMakeDeps
+
+[layout]
+cmake_layout
+```
+
+4. Generate dependencies + toolchain (Release)
+
+```bash
+# from the project root (where conanfile.txt is)
+#conan install . --output-folder=build -s build_type=Release --build=missing
+conan install . --output-folder=. -s build_type=Release --build=missing
+# Toolchain now at: build/Release/generators/conan_toolchain.cmake
+```
+
+5. Configure CMake (Unix Makefiles) pointing to the **proper toolchain path**
+
+```bash
+cmake -B build/Release -S . -G "Unix Makefiles" \
+  -DCMAKE_TOOLCHAIN_FILE=build/Release/generators/conan_toolchain.cmake \
+  -DCMAKE_BUILD_TYPE=Release
+```
+
+6. Build
+
+```bash
+cmake --build build/Release -j
+```
+
+7. Run executable / tests
+
+```bash
+# binary usually under build/Release/<target-subdir>
+find build/Release -maxdepth 3 -type f -executable
+
+# run tests (if enabled)
+cd build/Release && ctest --output-on-failure
+```
+
+---
+
+## If you want Debug instead
+
+```bash
+conan install . --output-folder=build -s build_type=Debug --build=missing
+cmake -B build/Debug -S . -G "Unix Makefiles" \
+  -DCMAKE_TOOLCHAIN_FILE=build/Debug/generators/conan_toolchain.cmake \
+  -DCMAKE_BUILD_TYPE=Debug
+cmake --build build/Debug -j
+cd build/Debug && ctest --output-on-failure
+```
+
+---
+
+## Quick troubleshooting
+
+* **Toolchain not found** → Re-run the matching `conan install` for that build type and use the exact path:
+  `build/<BuildType>/generators/conan_toolchain.cmake`.
+* **“CMAKE\_MAKE\_PROGRAM not set”** → `build-essential` (make) wasn’t installed, or generator not set to `"Unix Makefiles"`.
+* **Compiler not detected** → Ensure `g++` exists: `sudo apt install build-essential`.
+
+This sticks to Makefiles and the correct toolchain path under `build/Release/generators/`.
+
