@@ -1,0 +1,11 @@
+load("//hello:hello.bzl", "hello_binary", "hello_world")
+
+hello_world(
+    name = "hello",
+    visibility = ["//visibility:public"],
+)
+
+hello_binary(
+    name = "greet_jp",
+    message = "Hello, JP from a custom rule!",
+)

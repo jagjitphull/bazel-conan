@@ -1,0 +1,9 @@
+1. Install dependencies with Conan
+	conan install . --output-folder=build --build=missing
+
+2. Configure & build with CMake
+	cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=build/conan_toolchain.cmake
+	cmake --build build
+
+EX
+Try main2.cpp with CMakeLists-2.txt

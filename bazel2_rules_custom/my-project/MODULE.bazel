@@ -1,0 +1,16 @@
+"""Main project using custom text processing rules."""
+
+module(
+    name = "my_project",
+    version = "1.0.0",
+)
+
+# Declare dependency on our custom rules module
+bazel_dep(name = "text_processing_rules", version = "1.0.0")
+
+# During development, use local path override
+# This points to the local directory containing the rules
+local_path_override(
+    module_name = "text_processing_rules",
+    path = "../my-rules",  # Adjust path as needed
+)

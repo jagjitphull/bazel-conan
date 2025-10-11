@@ -1,0 +1,14 @@
+# Enable Bzlmod (module system)
+common --enable_bzlmod
+
+# Update lockfile automatically during development
+build --lockfile_mode=update
+
+# Show detailed output on failures
+build --verbose_failures
+
+# Show build progress
+build --show_progress
+
+# Use color output
+common --color=yes

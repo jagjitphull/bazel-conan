@@ -1,0 +1,40 @@
+# Load the custom rules from the module
+load("@text_processing_rules//text_processing:defs.bzl", 
+     "text_processor", "text_merger")
+
+# Make input file available
+exports_files(["input.txt"])
+
+# Example 1: Simple processing with uppercase
+text_processor(
+    name = "processed_text",
+    src = "input.txt",
+    header = "=== Processed Document ===",
+    uppercase = True,
+    add_timestamp = True,
+)
+
+# Example 2: Process same file differently
+text_processor(
+    name = "part1",
+    src = "input.txt",
+    header = "Part 1 - Original Case",
+)
+
+text_processor(
+    name = "part2",
+    src = "input.txt",
+    header = "Part 2 - Uppercase",
+    uppercase = True,
+)
+
+# Example 3: Merge the processed files
+text_merger(
+    name = "merged_output",
+    srcs = [
+        ":part1",
+        ":part2",
+    ],
+    output_name = "merged.txt",
+    separator = "\n========\n",
+)

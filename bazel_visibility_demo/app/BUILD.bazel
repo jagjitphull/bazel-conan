@@ -1,0 +1,9 @@
+py_binary(
+    name = "main",
+    srcs = ["main.py"],
+    deps = [
+        "//lib:math_lib",                # allowed (public)
+        "//tools:helper",                # allowed (we are in //app)
+        # "//internal:internal_tool",    # ❌ not allowed (private)
+    ],
+)

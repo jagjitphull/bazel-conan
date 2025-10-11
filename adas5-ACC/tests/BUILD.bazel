@@ -1,0 +1,7 @@
+load("@rules_cc//cc:defs.bzl", "cc_test")  # using cc_test directly
+
+cc_test(
+    name = "acc_test",
+    srcs = ["acc_test.cpp"],
+    deps = ["//src/acc:acc"],
+)

@@ -1,0 +1,7 @@
+cc_library(
+    name = "acc",
+    hdrs = ["acc.h"],
+    srcs = ["acc.cpp"],
+    include_prefix = "acc",             # expose to users as acc/acc.h
+    visibility = ["//visibility:public"],
+)

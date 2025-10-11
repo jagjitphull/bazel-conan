@@ -1,0 +1,11 @@
+"""Text processing rules module."""
+
+module(
+    name = "text_processing_rules",
+    version = "1.0.0",
+    compatibility_level = 1,
+)
+
+# Add dependencies if your rules need them
+# For example, if you use bazel_skylib utilities:
+# bazel_dep(name = "bazel_skylib", version = "1.5.0")

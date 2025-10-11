@@ -11,7 +11,7 @@ sh_binary(
 
 # A helper script for the test in ../BUILD
 sh_binary(
-    name = "grep_alpha.sh",
-    srcs = ["main.sh"],  # reuse same interpreter shebang; we’ll branch by argv
+    name = "grep_alpha",
+    srcs = ["main.sh"],      # reuse same interpreter shebang; we’ll branch by argv
+    data = ["//examples:joined"],    # <-- allow only //examples package
 )
-

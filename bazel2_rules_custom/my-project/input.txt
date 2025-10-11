@@ -1,0 +1,4 @@
+This is a sample text file.
+It contains multiple lines of text.
+We will process this file using our custom Bazel rule.
+This demonstrates how custom rules work in Bazel 8.4.

@@ -1,0 +1,4 @@
+module(
+    name = "query_training",
+    version = "1.0",
+)

@@ -1,0 +1,14 @@
+# BUILD.bazel for text_processing package
+
+# Export the rule definitions so other modules can use them
+exports_files(
+    ["defs.bzl"],
+    visibility = ["//visibility:public"],
+)
+
+# Optional: filegroup for all related files
+filegroup(
+    name = "all_files",
+    srcs = glob(["*.bzl"]),
+    visibility = ["//visibility:public"],
+)

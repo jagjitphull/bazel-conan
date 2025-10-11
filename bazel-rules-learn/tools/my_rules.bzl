@@ -1,6 +1,6 @@
 # tools/my_rules.bzl
 
-#Write your first custom rules (Starlark)
+#Write your  custom rules (Starlark)
 
 #Create tools/my_rules.bzl and add three rules to learn the basics:
 #    hello_file: writes a new file from a string attribute (+ a template).

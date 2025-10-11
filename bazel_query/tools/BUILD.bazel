@@ -1,0 +1,5 @@
+cc_binary(
+    name = "helper",
+    srcs = ["helper.cc"],
+    deps = ["//lib:all_libs"],
+)

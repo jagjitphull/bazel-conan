@@ -1,0 +1,22 @@
+cc_library(
+    name = "math",
+    srcs = ["math.cc"],
+    hdrs = ["math.h"],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "string_utils",
+    srcs = ["string_utils.cc"],
+    hdrs = ["string_utils.h"],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "all_libs",
+    deps = [
+        ":math",
+        ":string_utils",
+    ],
+    visibility = ["//visibility:public"],
+)

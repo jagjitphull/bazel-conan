@@ -1,0 +1,5 @@
+py_library(
+    name = "math_lib",
+    srcs = ["math_lib.py"],
+    visibility = ["//visibility:public"],  # Visible to all
+)

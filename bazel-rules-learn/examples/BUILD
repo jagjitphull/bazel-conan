@@ -26,9 +26,12 @@ py_transform(
 )
 
 # Optional: a tiny sh_test that validates 'joined' content contains 'alpha'
+#    It runs //examples/app:grep_alpha, which uses main.sh logic
 sh_test(
     name = "joined_has_alpha_test",
-    srcs = ["//examples/app:grep_alpha.sh"],
-    data = [":joined"],
+    srcs = ["grep_alpha_test.sh"],
+    data = [":joined"],                             # make the output available at runtime
+    args = ["--joined=$(location :joined)"],        # pass the exact path to the test
+
 )
 

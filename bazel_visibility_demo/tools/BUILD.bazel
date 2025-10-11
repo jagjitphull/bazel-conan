@@ -1,0 +1,10 @@
+package_group(
+    name = "app_packages",
+    packages = ["//app/..."],   # This is valid here
+)
+
+py_library(
+    name = "helper",
+    srcs = ["helper.py"],
+    visibility = [":app_packages"],  # Reference the package_group
+)

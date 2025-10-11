@@ -1,0 +1,5 @@
+cc_binary(
+    name = "demo_acc",
+    srcs = ["demo_acc.cpp"],
+    deps = ["//src/acc:acc"],
+)

@@ -1,0 +1,19 @@
+cc_binary(
+    name = "main",
+    srcs = ["main.cc"],
+    deps = [
+        "//lib:math",
+        "//lib:string_utils",
+        "//utils:logger",
+    ],
+)
+
+cc_test(
+    name = "main_test",
+    srcs = ["main.cc"],
+    deps = [
+        "//lib:math",
+        "//lib:string_utils",
+        "//utils:logger",
+    ],
+)

@@ -1,0 +1,5 @@
+py_library(
+    name = "internal_tool",
+    srcs = ["internal_tool.py"],
+    visibility = ["//visibility:private"],  # Only usable in this package
+)
